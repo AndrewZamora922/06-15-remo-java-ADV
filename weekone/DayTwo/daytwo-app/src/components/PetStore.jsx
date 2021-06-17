@@ -1,37 +1,44 @@
-import React, {useState} from 'react'
+import React, { useState } from "react";
 
 const PetStore = () => {
-    const [petList, setPetList] = useState([])
-    const [petName, setPetName] = useState('')
+  const [petList, setPetList] = useState([]);
+  const [petName, setPetName] = useState("");
 
-    const handleNameInput = (event) =>{
-        setPetName(event.target.value)
-    }
+  const handleNameInput = (event) => {
+    setPetName(event.target.value);
+  };
 
-    const handleClick = ()=>{
-        let petObj = {petName: petName}
-        setPetName(petName)
-        setPetList([...petObj.petName], petName)
-        console.log("clicked")
-    }
+  // 
+  const handleClick = () => {
+    let petObj = { petName: petName };
+    
+    setPetList([...petList,petName]);
+    setPetName("");
 
-    let arrOfPets = petList.map((animal, idx)=>{
-        return(
-            <div key={idx}>
-                <div>Name: {animal.PetName}</div>
-            </div>
-        )
-    })
+    console.log("clicked");
+  };
 
+  let arrOfPets = petList.map((animal, idx) => {
+      console.log(animal)
     return (
-        <div>
-            <h4>List of Animals</h4>
-            {arrOfPets}
-            <input 
-                value={petName} 
-                onChange={handleNameInput} 
-                placeholder="Pet Name" />
-            <button onClick = {handleClick}>Add Animal</button>
-        </div>
-    )
-}
+      <div key={idx}>
+        <div>Name: {animal}</div>
+      </div>
+    );
+  });
+
+  return (
+    <div>
+      <h4>List of Animals</h4>
+      {arrOfPets}
+      <input
+        value={petName}
+        onChange={handleNameInput}
+        placeholder="Pet Name"
+      />
+      <button onClick={handleClick}>Add Animal</button>
+    </div>
+  );
+};
+
+export default PetStore;

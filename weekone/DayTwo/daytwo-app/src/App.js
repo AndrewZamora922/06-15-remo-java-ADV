@@ -1,11 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
+import ListOfItems from './components/ListOfItems';
+import PetStore from './components/PetStore';
 
 function App() {
   return (
     <div className="App">
-      {/** <listOfItems /> */}
-      <petStore />
+      {/**<ListOfItems /> */ }
+      <PetStore />
     </div>
   );
 }
