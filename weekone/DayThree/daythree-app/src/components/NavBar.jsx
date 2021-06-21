@@ -24,6 +24,7 @@ import SignUpPage from "./SignUpPage";
 import { AuthContext } from "./AuthContext";
 import PrivateRoute from "./PrivateRoute";
 import AdminPage from "./AdminPage";
+import ContactUsPage from "./ContactUs"
 
 const drawerWidth = 240;
 
@@ -152,7 +153,7 @@ export default function NavBar() {
         </div>
         <Divider />
         <List>
-          {["Home", "Login", "SignUp", "Drafts"].map((text, index) => (
+          {["Home", "Login", "SignUp", "Contact Us"].map((text, index) => (
             <ListItem button key={text} component={Link} to={"/" + text}>
               <ListItemIcon>
                 {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
@@ -195,6 +196,10 @@ export default function NavBar() {
 
             <Route exact path="/SignUp">
               <SignUpPage />
+            </Route>
+
+            <Route exact path="/Contact Us">
+              <ContactUsPage />
             </Route>
             
           </Switch>
