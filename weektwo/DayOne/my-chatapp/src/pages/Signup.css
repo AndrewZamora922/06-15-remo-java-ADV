@@ -1,0 +1,27 @@
+body {
+    background-color: white;
+    font-family: 'font-family : Zen Loop, cursive';
+    align-items: center;
+    text-align: center;
+}
+
+.link:hover{
+    color: blue;
+    opacity: 1;
+}
+
+.link:active{
+    color: red;
+}
+
+.link:visited{
+    color: red;
+}
+
+.button:hover{
+    color: red;
+}
+
+.button:active{
+    color: red;
+}
